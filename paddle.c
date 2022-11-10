@@ -5,6 +5,7 @@
  *  @brief   paddle related functionality
 */
 
+#include <stdbool.h>
 #include "../drivers/navswitch.h"
 #include "../common/Position.h"
 #include "../common/config.h"
@@ -22,5 +23,14 @@ void paddle_control()
         if (paddle_position.col > 0) {
             paddle_position.col -= 1;
         }
+    }
+}
+
+bool paddle_collision(const Pos_t* const pos)
+{
+    if (pos->col == paddle_position.col || pos->col == paddle_position.col + 1) {
+        return true;
+    } else {
+        return false;
     }
 }
