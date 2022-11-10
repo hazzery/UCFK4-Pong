@@ -11,6 +11,8 @@
 #include "../drivers/button.h"
 #include "../drivers/led.h"
 #include "../utils/pacer.h"
+#include "paddle.h"
+#include "ball.h"
 #include <stdint.h>
 #include <stdbool.h>
 
@@ -31,8 +33,6 @@ int main (void)
     system_init();
     pacer_init(DISPLAY_FREQUENCY); // Initialize pacer to 300Hz so display columns update at 60Hz
 
-    Pos_t ball_pos = {.row = 0, .col = 2};
-
     while (1)
     {
         navswitch_update(); // Get new readings from navswitch
@@ -40,6 +40,8 @@ int main (void)
 
         if (is_playing) {
             // ball can bounce and paddle can move.
+            paddle_control();
+            ball_update();
         } else {
             // game is lost
         }
