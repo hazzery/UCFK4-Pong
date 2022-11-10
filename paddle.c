@@ -11,10 +11,13 @@
 #include "../common/config.h"
 #include "paddle.h"
 
-static Pos_t paddle_position;
+static Pos_t paddle_position = {.row = GRID_HEIGHT - 1, .col = 4};
+static int8_t previous_position = 4;
 
 void paddle_control()
 {
+    previous_position = paddle_position.col;
+
     if (navswitch_push_event_p(NAVSWITCH_EAST)) {
         if (paddle_position.col < GRID_WIDTH) {
             paddle_position.col += 1;
@@ -33,4 +36,9 @@ bool paddle_collision(const Pos_t* const pos)
     } else {
         return false;
     }
+}
+
+int8_t paddle_velocity()
+{
+    return paddle_position.col - previous_position;
 }

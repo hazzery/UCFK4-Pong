@@ -13,5 +13,6 @@
 
 extern void paddle_control();
 extern bool paddle_collision(const Pos_t * const pos);
+extern int8_t paddle_velocity();
 
 #endif //HARRY_PARKES_UCFK4_PADDLE_H
