@@ -4,7 +4,7 @@
 # Descr:  Makefile for Pong
 
 BINARY=main.out
-CODEDIRS=. ../drivers ../drivers/avr ../utils
+CODEDIRS=. ../drivers ../drivers/avr ../utils ../common
 INCDIRS=. ../drivers ../drivers/avr ../utils ../common ../fonts
 
 CC=avr-gcc
