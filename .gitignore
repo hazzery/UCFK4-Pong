@@ -1,0 +1,16 @@
+#MacOS pain
+*.DS_Store
+
+#IDE things
+.vscode/
+.idea/
+
+# Make dependancy files generated during build
+*.d
+
+# Binary files generated during build.
+*.o
+*.bin
+*.map
+*.out
+*.hex
