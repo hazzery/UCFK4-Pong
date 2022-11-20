@@ -11,6 +11,8 @@
 #include "../common/config.h"
 #include "paddle.h"
 
+extern bool display[7][5];
+
 static Pos_t paddle_position = {.row = GRID_HEIGHT - 1, .col = 4};
 static int8_t previous_position = 4;
 
@@ -27,6 +29,8 @@ void paddle_control(void)
             paddle_position.col -= 1;
         }
     }
+    display[paddle_position.row][paddle_position.col] = 1;
+    display[paddle_position.row][paddle_position.col + 1] = 1;
 }
 
 bool paddle_collision(const Pos_t* const pos)

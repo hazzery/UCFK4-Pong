@@ -11,9 +11,10 @@
 #include "paddle.h"
 #include "ball.h"
 
-static Vector_t ball_velocity = {.x = 1, .y = -1};
+static vector_t ball_velocity = {.x = 1, .y = -1};
 static Pos_t ball_position = {.row = 0, .col = 1};
 
+extern bool display[7][5];
 extern bool is_playing;
 
 void ball_update(void)
@@ -42,4 +43,6 @@ void ball_update(void)
     if (ball_position.col == GRID_WIDTH - 1 || ball_position.col == 0) {
         ball_velocity.x *= -1;
     }
+
+    display[ball_position.row][ball_position.col] = 1;
 }
