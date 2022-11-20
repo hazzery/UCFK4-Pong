@@ -11,8 +11,8 @@
 #include <stdbool.h>
 #include "../common/Position.h"
 
-extern void paddle_control();
+extern void paddle_control(void);
 extern bool paddle_collision(const Pos_t * const pos);
-extern int8_t paddle_velocity();
+extern int8_t paddle_velocity(void);
 
 #endif //HARRY_PARKES_UCFK4_PADDLE_H

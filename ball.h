@@ -8,6 +8,6 @@
 #ifndef HARRY_PARKES_UCFK4_BALL_H
 #define HARRY_PARKES_UCFK4_BALL_H
 
-extern void ball_update();
+extern void ball_update(void);
 
 #endif //HARRY_PARKES_UCFK4_BALL_H

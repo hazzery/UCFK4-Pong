@@ -16,7 +16,7 @@ static Pos_t ball_position = {.row = 0, .col = 1};
 
 extern bool is_playing;
 
-void ball_update()
+void ball_update(void)
 {
     ball_position.col += ball_velocity.x;
     ball_position.row += ball_velocity.y;

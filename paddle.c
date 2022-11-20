@@ -14,7 +14,7 @@
 static Pos_t paddle_position = {.row = GRID_HEIGHT - 1, .col = 4};
 static int8_t previous_position = 4;
 
-void paddle_control()
+void paddle_control(void)
 {
     previous_position = paddle_position.col;
 
@@ -38,7 +38,7 @@ bool paddle_collision(const Pos_t* const pos)
     }
 }
 
-int8_t paddle_velocity()
+int8_t paddle_velocity(void)
 {
     return paddle_position.col - previous_position;
 }
